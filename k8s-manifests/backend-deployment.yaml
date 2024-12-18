@@ -22,6 +22,8 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: docker
+      imagePullSecrets:
+      - name: acr-secret
 ---
 apiVersion: v1
 kind: Service

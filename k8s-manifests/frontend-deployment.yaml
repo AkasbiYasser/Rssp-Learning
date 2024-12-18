@@ -19,16 +19,18 @@ spec:
         image: pfsacr.azurecr.io/frontend:latest
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: acr-secret
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: frontend-service
 spec:
-  type: LoadBalancer
   selector:
     app: frontend
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+

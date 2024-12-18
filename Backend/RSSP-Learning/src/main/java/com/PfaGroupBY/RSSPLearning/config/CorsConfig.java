@@ -12,8 +12,8 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         // Autoriser les origines nécessaires
-        config.addAllowedOrigin("http://localhost:3000");
-        config.addAllowedOrigin("http://zlearning-frontend");
+        config.addAllowedOrigin("https://localhost:3000");
+        config.addAllowedOrigin("https://rssplearning.tech");
 
         // Autoriser toutes les méthodes HTTP
         config.addAllowedMethod("*");
