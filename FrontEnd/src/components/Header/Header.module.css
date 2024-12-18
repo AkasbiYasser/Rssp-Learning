@@ -1,0 +1,181 @@
+/* Container Styling */
+.container {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing to align with the first code */
+    align-items: center;
+    padding: 20px 5%;
+    max-width: 1200px; /* Add this for width constraints */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Logo Link Styling */
+.logo {
+    display: flex;
+    align-items: center; /* Align logo vertically */
+}
+
+.logo a {
+    font-size: 22px; /* Retain existing size */
+    color: var(--blue);
+    display: flex;
+}
+
+.logoImage {
+    max-height: 4em;
+    width: auto;
+    object-fit: contain; /* Ensure the image fits nicely */
+}
+
+/* List Styling */
+.list ul {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    list-style-type: none; /* Remove bullets */
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+}
+
+.list li {
+    margin: 0 15px; /* Adjust spacing to match the first code */
+    position: relative; /* Add position for dropdown if necessary */
+}
+
+/* Auth Button Styling */
+.auth {
+    display: flex;
+    align-items: center;
+}
+
+.auth button {
+    margin: 0 5px; /* Consistent spacing */
+    padding: 8px 16px; /* Add padding for a uniform look */
+    border-radius: 4px; /* Add rounded corners */
+    transition: background-color 0.3s ease; /* Add hover transition */
+}
+
+.auth button:first-child {
+    background-color: transparent;
+    border: 1px solid var(--dark-blue);
+    color: var(--dark-blue);
+}
+
+.auth button:last-child {
+    background-color: var(--dark-blue);
+    color: white;
+    border: none;
+}
+
+.auth button:first-child:hover {
+    background-color: #c2b8ff; /* Light blue */
+    color: #003566; /* Dark blue */
+}
+
+.auth button:last-child:hover {
+    background-color: #c2b8ff; /* Light green */
+    color: #003566;
+}
+
+/* Courses Panel Section */
+.panel {
+    text-align: center;
+    color: var(--white);
+    background-color: var(--dark-blue);
+    width: 100%;
+    margin-top: 20px;
+
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+
+    overflow-x: auto; /* Allow scrolling for smaller screens */
+}
+
+.panel a {
+    color: var(--white);
+    padding: 5px 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.panel a:hover {
+    background-color: var(--light-purple); /* Match hover effect */
+}
+
+/* Dropdown Menu Styling */
+.dropdownTrigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdownIcon {
+    margin-left: 5px;
+    padding: 3px 3px;
+    font-size: 0.6em;
+    color: var(--gray);
+    transition: all 0.3s ease;
+}
+
+.dropdownIcon.rotated {
+    transform: rotate(180deg);
+    color: var(--dark-blue);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    min-width: 100px;
+    background-color: rgba(84, 114, 231, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.dropdownItem {
+    display: block;
+    padding: 10px 20px;
+    color: var(--dark-blue);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdownItem:hover {
+    background-color: var(--light-blue);
+    color: var(--grey);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 15px 3%; /* Adjust padding */
+    }
+
+    .logo {
+        margin-bottom: 15px; /* Add spacing below logo */
+    }
+
+    .list ul {
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center; /* Center menu items */
+    }
+
+    .list li {
+        margin: 10px 0; /* Add vertical spacing */
+    }
+
+    .auth {
+        flex-direction: column; /* Stack buttons vertically */
+        width: 100%; /* Make buttons take full width */
+    }
+
+    .auth button {
+        width: 100%; /* Full-width buttons */
+        margin: 10px 0; /* Add vertical spacing */
+    }
+}

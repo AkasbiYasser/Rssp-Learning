@@ -1,0 +1,70 @@
+.coursesContainer {
+    display: flex;
+    margin-top: 20px;
+    background-color: #e9f1ed;
+}
+
+.filters 
+{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 26%;
+    padding: 0 12px;
+}
+
+.subtitle
+{
+    font-size: 24px;  /* Adjust the size of the label */
+    margin-bottom: 10px;  /* Space between label and list */
+    font-family: 'Roboto';
+    margin: 10px 0;
+    color:#0a67a9;
+}
+
+.categoryList
+{
+    list-style: none;
+    margin: 20px 0;
+}
+
+.listItem
+{
+    padding: 5px 0;
+    padding-left: 16px;
+    cursor: pointer;
+}
+
+.listItem:hover
+{
+    background-color: rgb(233, 241, 237);
+}
+
+.priceContainer
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+/* Courses Section */
+.tousLesCategories {
+    font-family: 'New Times Roman',bold, sans-serif;
+    font-size: 16px; /* Adjust as needed */
+    color: var(--blue);
+  }
+.courses
+{
+    width: calc(74% - 24px);
+    padding: 25px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+.selectedCategory {
+    color: #372ac7; /* Change color for selected category */
+    font-weight: bold;
+  }
+  
