@@ -1,9 +1,12 @@
+version: '3.8'
+
 services:
   frontend:
     build:
       context: ./FrontEnd
       dockerfile: Dockerfile
     container_name: zlearning-frontend
+    image: frontend:latest
     ports:
       - "3000:80"
     networks:
@@ -14,6 +17,7 @@ services:
       context: ./Backend
       dockerfile: Dockerfile
     container_name: zlearning-backend
+    image: backend:latest
     ports:
       - "8080:8080"
     environment:
