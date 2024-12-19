@@ -60,9 +60,9 @@ pipeline {
                         sh '''
                             echo "Deploying to AKS..."
 
-                            kubectl apply -f manifests/frontend-deployment.yaml --kubeconfig=$KUBECONFIG
-                            kubectl apply -f manifests/backend-deployment.yaml --kubeconfig=$KUBECONFIG
-                            kubectl apply -f manifests/mongodb-deployment.yaml --kubeconfig=$KUBECONFIG
+                            kubectl apply -f k8s-manifests/frontend-deployment.yaml --kubeconfig=$KUBECONFIG
+                            kubectl apply -f k8s-manifests/backend-deployment.yaml --kubeconfig=$KUBECONFIG
+                            kubectl apply -f k8s-manifests/mongodb-deployment.yaml --kubeconfig=$KUBECONFIG
                         '''
                     }
                 }
