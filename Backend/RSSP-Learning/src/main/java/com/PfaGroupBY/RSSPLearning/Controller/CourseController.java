@@ -1,8 +1,8 @@
-package com.PfaGroup5.ZLearning.controller;
+package com.PfaGroupBY.RSSPLearning.Controller;
 
 
-import com.PfaGroup5.ZLearning.model.Course;
-import com.PfaGroup5.ZLearning.service.CourseService;
+import com.PfaGroupBY.RSSPLearning.model.Course;
+import com.PfaGroupBY.RSSPLearning.service.CourseService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
