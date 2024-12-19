@@ -13,8 +13,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 
+
 @RestController
-    @RequestMapping("Api/Certif")
+@RequestMapping("Api/Certif")
 public class CourseController {
 
     private final CourseService courseService;
@@ -29,7 +30,8 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping
+    // Correction ici : Ajout explicite de "/"
+    @GetMapping("/")
     public ResponseEntity<List<Course>> getAllCertif() {
         return ResponseEntity.ok(courseService.getAllCertif());
     }
@@ -55,7 +57,6 @@ public class CourseController {
         }
     }
 
-
     @GetMapping("/downloadCertifImage/{id}")
     public ResponseEntity<byte[]> downloadImage(@PathVariable String id) {
         try {
@@ -77,7 +78,4 @@ public class CourseController {
         courseService.deleteCertif(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
-
-
-
 }
