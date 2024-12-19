@@ -4,8 +4,8 @@ FROM openjdk:17-jdk-slim
 # Définir le répertoire de travail
 WORKDIR /app
 
-# Copier le fichier JAR généré
-COPY target/RSSP-Learning-0.0.1-SNAPSHOT.jar app.jar
+# Copier le fichier JAR généré depuis l'emplacement dans Jenkins
+COPY RSSP-Learning/target/RSSP-Learning-0.0.1-SNAPSHOT.jar app.jar
 
 # Exposer le port sur lequel l'application fonctionne
 EXPOSE 8080
