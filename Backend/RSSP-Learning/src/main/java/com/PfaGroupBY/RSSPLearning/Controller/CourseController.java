@@ -1,8 +1,8 @@
-package com.PfaGroupBY.RSSPLearning.Controller;
+package com.PfaGroup5.ZLearning.controller;
 
 
-import com.PfaGroupBY.RSSPLearning.model.Course;
-import com.PfaGroupBY.RSSPLearning.service.CourseService;
+import com.PfaGroup5.ZLearning.model.Course;
+import com.PfaGroup5.ZLearning.service.CourseService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,9 +13,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 
-
 @RestController
-@RequestMapping("Api/Certif")
+    @RequestMapping("Api/Certif")
 public class CourseController {
 
     private final CourseService courseService;
@@ -30,8 +29,7 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    // Correction ici : Ajout explicite de "/"
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<Course>> getAllCertif() {
         return ResponseEntity.ok(courseService.getAllCertif());
     }
@@ -57,6 +55,7 @@ public class CourseController {
         }
     }
 
+
     @GetMapping("/downloadCertifImage/{id}")
     public ResponseEntity<byte[]> downloadImage(@PathVariable String id) {
         try {
@@ -78,4 +77,7 @@ public class CourseController {
         courseService.deleteCertif(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+
+
 }

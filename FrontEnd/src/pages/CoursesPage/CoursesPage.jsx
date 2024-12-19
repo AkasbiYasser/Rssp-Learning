@@ -59,7 +59,7 @@ function CoursesPage() {
     }
 
     try {
-      const response = await axios.post('http://rssplearning.tech/Api/User/Login', {
+      const response = await axios.post('http://rssplearning.tech/user/login', {
         email: user.email,
         password: user.password
       });
@@ -101,7 +101,7 @@ function CoursesPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const val = await axios.get('http://rssplearning.tech/Api/Category/');
+        const val = await axios.get('http://rssplearning.tech/admin/categories/');
         setCategories(val.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -114,7 +114,7 @@ function CoursesPage() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const val = await axios.get('http://rssplearning.tech/Api/Certif');
+        const val = await axios.get('http://rssplearning.tech/admin/courses');
         setCourses(val.data);
       } catch (error) {
         console.error('Error fetching data:', error);

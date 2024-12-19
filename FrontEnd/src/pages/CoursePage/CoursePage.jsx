@@ -40,7 +40,7 @@ function CoursePage() {
     }
 
     try {
-      const response = await axios.post('http://rssplearning.tech/Api/User/Login', {
+      const response = await axios.post('http://rssplearning.tech/user/login', {
         email: user.email,
         password: user.password
       });
@@ -91,7 +91,7 @@ function CoursePage() {
 
     const fetchCourse = async () => {
       try {
-        const val = await axios.get(`http://rssplearning.tech/Api/Certif/${params.id}`);
+        const val = await axios.get(`http://rssplearning.tech/admin/courses/${params.id}`);
         setCourse(val.data);
       } catch (error) {
         console.error('Error fetching data:', error);

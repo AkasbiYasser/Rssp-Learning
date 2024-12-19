@@ -12,7 +12,7 @@ function CategoryForm({ ADD, CANCEL }) {
     };
 
     try {
-      const val = await axios.post('http://rssplearning.tech/Api/Category/', categoryData);
+      const val = await axios.post('http://rssplearning.tech/admin/categories/', categoryData);
     } catch (error) {
       console.error('Error adding data:', error);
     }
