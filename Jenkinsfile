@@ -16,6 +16,7 @@ pipeline {
                 script {
                     sh '''
                         echo "Building the project..."
+                        cd Backend/RSSP-Learning
                         mvn clean install -DskipTests
                     '''
                 }
