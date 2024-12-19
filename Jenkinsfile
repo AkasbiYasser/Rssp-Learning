@@ -1,13 +1,24 @@
 pipeline {
     agent any
     environment {
-        ACR_NAME = 'PFSAcr' 
+        ACR_NAME = 'PFSAcr'
         ACR_URL = "${ACR_NAME}.azurecr.io"
     }
     stages {
         stage('Checkout Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/AkasbiYasser/Rssp-Learning.git', credentialsId: 'github-token'
+            }
+        }
+
+        stage('Build Project') {
+            steps {
+                script {
+                    sh '''
+                        echo "Building the project..."
+                        mvn clean install -DskipTests
+                    '''
+                }
             }
         }
 
@@ -47,7 +58,6 @@ pipeline {
                             kubectl apply -f manifests/frontend-deployment.yaml --kubeconfig=$KUBECONFIG
                             kubectl apply -f manifests/backend-deployment.yaml --kubeconfig=$KUBECONFIG
                             kubectl apply -f manifests/mongodb-deployment.yaml --kubeconfig=$KUBECONFIG
-                          
                         '''
                     }
                 }
