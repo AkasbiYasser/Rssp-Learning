@@ -40,7 +40,10 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'acr-token', usernameVariable: 'ACR_USERNAME', passwordVariable: 'ACR_PASSWORD')]) {
                         sh '''
                             docker login ${ACR_URL} -u ${ACR_USERNAME} -p ${ACR_PASSWORD}
- 
+
+                            docker tag FrontEnd ${ACR_URL}/frontend:latest
+                            docker tag Backend ${ACR_URL}/backend:latest
+                            
                             docker push ${ACR_URL}/FrontEnd:latest
                             docker push ${ACR_URL}/Backend:latest
                         '''
