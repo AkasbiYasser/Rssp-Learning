@@ -53,13 +53,13 @@ function CoursesPage() {
   const enroll = async (course) => {
     const user = GetCookie("user");
     try {
-      await axios.post(`http://rssplearning.tech/user/${user.id}/courses/${course.id}`);
+      await axios.post(`http://rssplearning.tech/Api/User/${user.id}/Courses/${course.id}`);
     } catch (error) {
       console.error('Error adding course to user:', error);
     }
 
     try {
-      const response = await axios.post('http://rssplearning.tech/user/login', {
+      const response = await axios.post('http://rssplearning.tech/Api/User/Login', {
         email: user.email,
         password: user.password
       });
@@ -101,7 +101,7 @@ function CoursesPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const val = await axios.get('http://rssplearning.tech/admin/categories');
+        const val = await axios.get('http://rssplearning.tech/Api/Category/');
         setCategories(val.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -114,7 +114,7 @@ function CoursesPage() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const val = await axios.get('http://rssplearning.tech/admin/courses');
+        const val = await axios.get('http://rssplearning.tech/Api/Certif');
         setCourses(val.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -125,7 +125,7 @@ function CoursesPage() {
       try {
         const user = GetCookie("user");
         console.log(user);
-        const val = await axios.get(`http://rssplearning.tech/user/${user.id}/courses`);
+        const val = await axios.get(`http://rssplearning.tech/Api/User/${user.id}/Courses`);
         setUserCourses(val.data);
       } catch (error) {
         console.error('Error fetching data:', error);

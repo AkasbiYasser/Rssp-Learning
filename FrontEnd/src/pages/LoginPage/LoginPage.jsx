@@ -24,7 +24,7 @@ function LoginPage() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://rssplearning.tech/user/login', userData);
+      const response = await axios.post('http://rssplearning.tech/Api/User/Login', userData);
       
       const user = response.data;
       Cookies.set("user", JSON.stringify(user), { expires: 1 });

@@ -20,7 +20,7 @@ function RegisterPage() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://rssplearning.tech/user/register', {
+      const response = await axios.post('http://rssplearning.tech/Api/User/Register', {
         lastName: lastName,
         firstName: firstName,
         phoneNumber: phoneNumber,
