@@ -53,7 +53,7 @@ function CoursesPage() {
   const enroll = async (course) => {
     const user = GetCookie("user");
     try {
-      await axios.post(`https://rssplearning.tech/Api/User/${user.id}/Courses/${course.id}`);
+      await axios.post(`https://rssplearning.tech/user/${user.id}/courses/${course.id}`);
     } catch (error) {
       console.error('Error adding course to user:', error);
     }
@@ -101,7 +101,7 @@ function CoursesPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const val = await axios.get('https://rssplearning.tech/admin/categories/');
+        const val = await axios.get('https://rssplearning.tech/admin/categories');
         setCategories(val.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -125,7 +125,7 @@ function CoursesPage() {
       try {
         const user = GetCookie("user");
         console.log(user);
-        const val = await axios.get(`https://rssplearning.tech/Api/User/${user.id}/Courses`);
+        const val = await axios.get(`https://rssplearning.tech/user/${user.id}/courses`);
         setUserCourses(val.data);
       } catch (error) {
         console.error('Error fetching data:', error);
