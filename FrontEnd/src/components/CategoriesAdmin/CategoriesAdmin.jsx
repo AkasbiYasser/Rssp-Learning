@@ -14,7 +14,7 @@ function CategoriesAdmin() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const val = await axios.get('https://rssplearning.tech/admin/categories/');
+        const val = await axios.get('https://rssplearning.tech/admin/categories');
         setCategories(val.data);
       } catch (error) {
         console.error('Error fetching data:', error);
